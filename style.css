@@ -1,35 +1,84 @@
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
-  color: #333;
+<style>
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --card-color: #fff;
+  --accent: #2da44e;
 }
-
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #eee;
+  --card-color: #2c2c2c;
+  --accent: #58c472;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s;
+}
 header {
   background-color: #24292e;
   color: white;
-  padding: 1rem;
   text-align: center;
+  padding: 1rem;
+  position: relative;
 }
-
-h1 {
-  margin: 0;
+.switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
-
+.switch input {
+  display: none;
+}
+.slider {
+  background-color: #ccc;
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+input:checked + .slider::before {
+  transform: translateX(20px);
+}
+input:checked + .slider {
+  background-color: var(--accent);
+}
 main {
   padding: 2rem;
+  max-width: 800px;
+  margin: auto;
 }
-
+input#search {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 .file-list {
   display: grid;
   gap: 1rem;
-  max-width: 600px;
-  margin: auto;
 }
-
 .file-item {
-  background: white;
+  background: var(--card-color);
   padding: 1rem;
   border-radius: 8px;
   display: flex;
@@ -37,22 +86,47 @@ main {
   align-items: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
 .download-btn {
-  text-decoration: none;
+  background: var(--accent);
   color: white;
-  background: #2da44e;
   padding: 0.5rem 1rem;
   border-radius: 4px;
+  text-decoration: none;
 }
-
-.download-btn:hover {
-  background: #218639;
-}
-
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #eee;
+  background: #ddd;
   margin-top: 2rem;
 }
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.modal-content {
+  background: var(--card-color);
+  max-width: 90%;
+  max-height: 80vh;
+  overflow: auto;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.file-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.preview-btn {
+  background: #888;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+</style>
