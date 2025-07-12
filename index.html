@@ -6,25 +6,17 @@
   <title>Arsip File</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <h1>📁 Arsip Publik</h1>
-    <p>Unduh file langsung dari repositori ini</p>
-  </header>
-
+<body class="dark">
+  <header><h1>📁 Arsip Publik</h1></header>
   <main>
     <input type="text" id="search" placeholder="Cari file..." />
+    <div id="filters"><button data-category="all" class="filter-btn active">Semua</button></div>
+    <div class="view-toggle"><button id="viewList">📄 List</button><button id="viewGrid">🔲 Grid</button></div>
     <section class="file-list" id="fileList"></section>
+    <button id="loadMore">Muat Lebih Banyak</button>
   </main>
-
-  <footer>
-    <p>© 2025 • GitHub Pages • Dibuat oleh Dony</p>
-  </footer>
-
-  <div id="modalContainer" class="modal" onclick="this.style.display='none'">
-    <div id="previewModal" class="modal-content" onclick="event.stopPropagation()"></div>
-  </div>
-
+  <footer><p>© 2025 • GitHub Pages • Dibuat oleh Dony</p></footer>
+  <div id="modalContainer" class="modal" onclick="this.style.display='none'"><div id="previewModal" class="modal-content" onclick="event.stopPropagation()"></div></div>
   <script src="script.js"></script>
 </body>
 </html>

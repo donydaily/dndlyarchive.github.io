@@ -1,7 +1,42 @@
 [
-  { "name": "dokumen1.pdf", "path": "assets/files/dokumen1.pdf" },
-  { "name": "skrip.py", "path": "assets/files/skrip.py" },
-  { "name": "lainnya.zip", "path": "assets/files/lainnya.zip" },
-  { "name": "catatan.txt", "path": "assets/files/catatan.txt" },
-  { "name": "readme.md", "path": "assets/files/readme.md" }
+  {
+    "name": "dokumen1.pdf",
+    "path": "assets/files/dokumen1.pdf",
+    "category": "Dokumen"
+  },
+  {
+    "name": "gambar1.jpg",
+    "path": "assets/files/gambar1.jpg",
+    "category": "Gambar"
+  },
+  {
+    "name": "skrip.py",
+    "path": "assets/files/skrip.py",
+    "category": "Kode"
+  },
+  {
+    "name": "catatan.txt",
+    "path": "assets/files/catatan.txt",
+    "category": "Dokumen"
+  },
+  {
+    "name": "logo.png",
+    "path": "assets/files/logo.png",
+    "category": "Gambar"
+  },
+  {
+    "name": "video.mp4",
+    "path": "assets/files/video.mp4",
+    "category": "Media"
+  },
+  {
+    "name": "data.csv",
+    "path": "assets/files/data.csv",
+    "category": "Data"
+  },
+  {
+    "name": "readme.md",
+    "path": "assets/files/readme.md",
+    "category": "Dokumen"
+  }
 ]
