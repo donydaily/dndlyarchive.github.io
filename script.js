@@ -87,17 +87,7 @@ document.getElementById("search").addEventListener("input", (e) => {
   });
 });
 
-const toggle = document.getElementById("darkToggle");
-toggle.addEventListener("change", () => {
-  document.body.classList.toggle("dark", toggle.checked);
-  localStorage.setItem("darkMode", toggle.checked ? "1" : "0");
-});
-
 window.addEventListener("DOMContentLoaded", () => {
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const saved = localStorage.getItem("darkMode");
-  const enableDark = saved === "1" || (saved === null && prefersDark);
-  toggle.checked = enableDark;
-  document.body.classList.toggle("dark", enableDark);
+  document.body.classList.add("dark");
   renderFileList();
 });
