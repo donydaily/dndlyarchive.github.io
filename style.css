@@ -1,16 +1,23 @@
-<style>
 :root {
   --bg-color: #f4f4f4;
   --text-color: #333;
   --card-color: #fff;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --modal-bg: #fff;
   --accent: #2da44e;
 }
+
 body.dark {
   --bg-color: #1e1e1e;
   --text-color: #eee;
   --card-color: #2c2c2c;
+  --input-bg: #333;
+  --input-border: #555;
+  --modal-bg: #3a3a3a;
   --accent: #58c472;
 }
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -18,21 +25,26 @@ body {
   color: var(--text-color);
   transition: 0.3s;
 }
+
 header {
-  background-color: #24292e;
-  color: white;
+  background-color: var(--card-color);
+  color: var(--text-color);
   text-align: center;
   padding: 1rem;
   position: relative;
+  border-bottom: 1px solid var(--input-border);
 }
+
 .switch {
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
+
 .switch input {
   display: none;
 }
+
 .slider {
   background-color: #ccc;
   width: 40px;
@@ -42,6 +54,7 @@ header {
   display: block;
   position: relative;
 }
+
 .slider::before {
   content: "";
   position: absolute;
@@ -53,30 +66,37 @@ header {
   left: 2px;
   transition: 0.3s;
 }
+
 input:checked + .slider::before {
   transform: translateX(20px);
 }
+
 input:checked + .slider {
   background-color: var(--accent);
 }
+
 main {
   padding: 2rem;
   max-width: 800px;
   margin: auto;
 }
+
 input#search {
+  background: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   width: 100%;
   max-width: 400px;
-  display: block;
-  border: 1px solid #ccc;
   border-radius: 5px;
 }
+
 .file-list {
   display: grid;
   gap: 1rem;
 }
+
 .file-item {
   background: var(--card-color);
   padding: 1rem;
@@ -86,6 +106,7 @@ input#search {
   align-items: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 .download-btn {
   background: var(--accent);
   color: white;
@@ -93,12 +114,30 @@ input#search {
   border-radius: 4px;
   text-decoration: none;
 }
+
+.preview-btn {
+  background: #888;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
 footer {
   text-align: center;
   padding: 1rem;
-  background: #ddd;
+  background: var(--card-color);
+  color: var(--text-color);
+  border-top: 1px solid var(--input-border);
   margin-top: 2rem;
 }
+
 .modal {
   display: none;
   position: fixed;
@@ -109,24 +148,13 @@ footer {
   justify-content: center;
   padding: 2rem;
 }
+
 .modal-content {
-  background: var(--card-color);
+  background: var(--modal-bg);
   max-width: 90%;
   max-height: 80vh;
   overflow: auto;
   padding: 1rem;
   border-radius: 8px;
+  color: var(--text-color);
 }
-.file-actions {
-  display: flex;
-  gap: 0.5rem;
-}
-.preview-btn {
-  background: #888;
-  color: white;
-  border: none;
-  padding: 0.5rem 0.7rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-</style>
